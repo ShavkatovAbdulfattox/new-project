@@ -1,0 +1,33 @@
+$body_bg: hsl(0deg 100% 0%);
+$white: hsl(0deg 100% 100%);
+$title: #dcca87;
+$grey: #aaaaaa;
+
+@mixin button {
+  cursor: pointer;
+  border: $title;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 32px;
+  background: $title;
+  font-family: "Cormorant Upright";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 175%;
+  letter-spacing: 0.04em;
+  color: #0c0b08;
+
+  @media screen and (max-width: 1150px) {
+    padding: 5px 22px;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 4px 8px;
+    line-height: 140%;
+    font-weight: 700;
+    font-size: 13px;
+  }
+}

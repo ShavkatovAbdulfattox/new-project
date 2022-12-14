@@ -1,0 +1,288 @@
+@import "../styles/root.scss";
+// ================  Header =============
+@font-face {
+  font-family: "Cormorant Upright";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/CormorantUpright-Bold.ttf");
+}
+
+.header {
+  height: 100vh;
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: clamp(20px, 7vw, 100px);
+
+    @media screen and (max-width: 1020px) {
+      // flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    // ******* item ***********
+    //  ======================
+    //  ======================
+    //  ======================
+    &__item {
+      width: 50%;
+      @media screen and (max-width: 1020px) {
+        width: 100%;
+      }
+      &-desc {
+        width: 65%;
+        @media screen and (max-width: 1020px) {
+          width: 100%;
+        }
+      }
+
+      //  === h3 styling wih before and after
+      h3 {
+        font-family: "Cormorant Upright";
+        font-style: normal;
+        font-weight: 700;
+        font-size: clamp(13px, 2vw, 23px);
+        line-height: 130%;
+        letter-spacing: 0.04em;
+        text-transform: capitalize;
+        color: $white;
+        margin-bottom: 8px;
+        @media screen and (max-width: 735px) {
+          margin-bottom: 2px;
+        }
+        span {
+          display: flex;
+          align-items: center;
+
+          &::before {
+            content: "";
+            display: block;
+            width: clamp(45px, 5vw, 70px);
+            border: 1px solid $title;
+            padding: 0.5px;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            border-radius: 45%;
+            padding: 2px 5px;
+            border: 1px solid $title;
+          }
+        }
+      }
+
+      //  === h3 styling wih before and after
+
+      h1 {
+        font-family: "Cormorant Upright";
+        font-style: normal;
+        font-weight: clamp(500, 600, 700);
+        font-size: clamp(25px, 5vw, 90px);
+        line-height: 130%;
+        letter-spacing: 0.04em;
+        text-transform: capitalize;
+        color: $title;
+
+        @media screen and (max-width: 10020px) {
+        }
+      }
+
+      p {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: clamp(10px, 1.5vw, 16px);
+        line-height: 175%;
+        letter-spacing: 0.04em;
+        color: $grey;
+        margin-top: 32px;
+
+        @media screen and (max-width: 735px) {
+          margin-top: 10px;
+          text-align: justify;
+        }
+      }
+
+      button {
+        @include button;
+        margin-top: clamp(15px, 3vw, 40px);
+      }
+    }
+
+    //  ======================
+    //  ======================
+    //  ======================
+    // ******* item ***********
+
+    span:first-of-type h3 {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: clamp(9px, 1.5vw, 18px);
+      line-height: 175%;
+      letter-spacing: 0.04em;
+      color: $white;
+      // align-items: center;
+    }
+  }
+
+  &-content {
+    position: relative;
+
+    &__image {
+      width: 45%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      @media screen and (max-width: 1020px) {
+        width: 100%;
+      }
+      div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 60%;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: -6%;
+          left: 15%;
+          height: 50%;
+          width: 40%;
+          background: $title;
+          z-index: -1;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -6%;
+          right: 15%;
+          height: 50%;
+          width: 40%;
+          background: $title;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  &-content > span:first-of-type {
+    display: flex;
+    margin-left: -3%;
+    transform: rotate(-90deg);
+
+    @media screen and (max-width: 1020px) {
+      transform: rotate(0);
+      margin-left: 0;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      margin-left: clamp(10px, 2vw, 30px);
+    }
+
+    & h3:first-of-type {
+      margin: 0;
+    }
+  }
+
+  &-content > span:last-child {
+    position: absolute;
+    right: 0;
+    bottom: -20%;
+    font-family: "Cormorant Upright";
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(12px, 1vw, 16px);
+    line-height: 175%;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $title;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: -2%;
+    @media screen and (max-width: 530px) {
+      bottom: -25%;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      background: $title;
+      height: clamp(40px, 4vw, 60px);
+      width: 2px;
+      margin-bottom: clamp(15px, 2.5vw, 30px);
+      animation: gravitation 1s infinite linear alternate-reverse;
+    }
+  }
+
+  // ******** pagination ************
+
+  &-pagination {
+    padding-top: 10%;
+
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & li:first-of-type button {
+        margin-left: 0;
+      }
+      li button {
+        cursor: pointer;
+        outline: none;
+        border: none;
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 600;
+        font-size: clamp(14px, 1.8vw, 25px);
+        line-height: 175%;
+        letter-spacing: 0.04em;
+        text-transform: capitalize;
+        color: $white;
+        background: transparent;
+        margin-left: 8px;
+
+        &.active {
+          display: flex;
+          align-items: center;
+          color: $title;
+          font-weight: 800;
+          font-size: clamp(15px, 1.9vw, 30px);
+          &::after {
+            content: "";
+            display: block;
+            width: 16px;
+            margin: 0 0 0 8px;
+            height: 2px;
+            border: 1px solid #dcca87;
+            background: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes gravitation {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
