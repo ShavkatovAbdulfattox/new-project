@@ -9,6 +9,7 @@
 
 .header {
   height: min-content;
+  margin-bottom: 100px;
 
   &-content {
     display: flex;
@@ -68,7 +69,10 @@
             content: "";
             display: block;
             border-radius: 45%;
-            padding: 2px 5px;
+
+            height: 9px;
+            width: 15px;
+
             border: 1px solid $title;
           }
         }

@@ -33,7 +33,6 @@ const HeaderContent = () => {
         </div>
 
         <span>Scroll</span>
- 
       </div>
     </>
   );

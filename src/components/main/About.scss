@@ -1,8 +1,5 @@
 @import "../../styles/root.scss";
-main {
-  // isolation: isolate;
-}
-  
+
 .section {
   &-about {
     background: url("../../images/about__logo.png") no-repeat;
@@ -15,8 +12,52 @@ main {
   align-items: center;
   justify-content: center;
 
+  padding: 120px 0;
+  &-img {
+    margin: 0 76px;
+  }
+
   &-left {
     text-align: end;
+    & h3 {
+      span {
+        justify-content: flex-end !important;
+
+        &::before {
+          content: "";
+          height: 9px;
+          width: 15px;
+          border-radius: 45%;
+          border: 1px solid $title;
+        }
+
+        &::after {
+          content: "";
+          width: clamp(15px, 2vw, 30px);
+          border: 1px solid $title;
+          padding: 0.5px;
+        }
+      }
+    }
+  }
+
+  &-right {
+    h3 span {
+      &::before {
+        content: "";
+        width: clamp(15px, 2vw, 30px);
+        border: 1px solid $title;
+        padding: 0.5px;
+      }
+
+      &::after {
+        content: "";
+        height: 9px;
+        width: 15px;
+        border-radius: 45%;
+        border: 1px solid $title;
+      }
+    }
   }
   &__btn {
     display: inline-block;
@@ -32,6 +73,12 @@ main {
     text-transform: capitalize;
     font-feature-settings: "tnum" on, "lnum" on;
     color: #dcca87;
+
+    & span {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
   }
 
   & p {
@@ -43,9 +90,11 @@ main {
     line-height: 1.75;
     letter-spacing: 0.04em;
     color: $grey;
+    margin-top: 2rem;
   }
   & button {
     @include button;
     width: max-content;
+    margin-top: 2rem;
   }
 }

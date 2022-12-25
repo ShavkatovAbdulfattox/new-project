@@ -8,7 +8,9 @@ const About = () => {
       <div className="wrapper">
         <div className="about">
           <div className="about-left">
-            <h3>About Us</h3>
+            <h3>
+              About Us <span></span>
+            </h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
               pharetra adipiscing ultrices vulputate posuere tristique. In sed
@@ -22,7 +24,9 @@ const About = () => {
             <img src={aboutKnife} alt="" />
           </div>
           <div className="about-right">
-            <h3>Our History</h3>
+            <h3>
+              Our History <span></span>
+            </h3>
             <p>
               Adipiscing tempus ullamcorper lobortis odio tellus arcu volutpat.
               Risus placerat morbi volutpat habitasse interdum mi aliquam In sed
