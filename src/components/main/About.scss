@@ -1,0 +1,51 @@
+@import "../../styles/root.scss";
+main {
+  // isolation: isolate;
+}
+  
+.section {
+  &-about {
+    background: url("../../images/about__logo.png") no-repeat;
+    height: min-content;
+  }
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-left {
+    text-align: end;
+  }
+  &__btn {
+    display: inline-block;
+    justify-content: end;
+  }
+  & h3 {
+    font-family: "Cormorant Upright";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4rem;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+    font-feature-settings: "tnum" on, "lnum" on;
+    color: #dcca87;
+  }
+
+  & p {
+    max-width: 423px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.75;
+    letter-spacing: 0.04em;
+    color: $grey;
+  }
+  & button {
+    @include button;
+    width: max-content;
+  }
+}

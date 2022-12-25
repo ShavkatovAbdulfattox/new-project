@@ -4,8 +4,8 @@ import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <div className="wrapper">
-      <header className="header">
+    <header className="header">
+        <div className="wrapper">
         <Nav />
         <HeaderContent />
 
@@ -25,8 +25,8 @@ const Header = () => {
             </li>
           </ul>
         </div>
-      </header>
     </div>
+      </header>
   );
 };
 
