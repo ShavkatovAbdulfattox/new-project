@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import HeaderContent from "./HeaderContent";
 import Nav from "./Nav";
 
 const Header = () => {
   return (
     <header className="header">
-        <div className="wrapper">
+      <div className="wrapper">
         <Nav />
         <HeaderContent />
 
@@ -25,8 +25,8 @@ const Header = () => {
             </li>
           </ul>
         </div>
-    </div>
-      </header>
+      </div>
+    </header>
   );
 };
 
